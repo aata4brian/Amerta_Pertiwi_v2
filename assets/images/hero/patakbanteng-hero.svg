@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Desa Wisata Patakbanteng</title><desc id="desc">Alam, budaya, dan kehidupan masyarakat pegunungan</desc>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9E3D2"/><stop offset="1" stop-color="#FAF7EF"/></linearGradient><linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#476F50"/><stop offset="1" stop-color="#263B2F"/></linearGradient></defs>
+<rect width="1600" height="900" fill="url(#sky)"/><circle cx="1280" cy="180" r="95" fill="#FAF7EF" opacity=".92"/>
+<path d="M0 600 C260 430 420 460 650 620 C850 390 1100 390 1600 620 V900 H0Z" fill="#A7B88C" opacity=".82"/>
+<path d="M0 690 C260 520 520 560 760 710 C1010 480 1260 520 1600 690 V900 H0Z" fill="url(#hill)"/>
+<path d="M820 580 L1010 305 L1185 580Z" fill="#263B2F" opacity=".78"/><path d="M960 377 L1010 305 L1060 383 L1023 366 L1001 389Z" fill="#FAF7EF" opacity=".85"/>
+<g fill="none" stroke="#FAF7EF" stroke-width="6" opacity=".38"><path d="M130 720 C430 620 520 650 760 735"/><path d="M920 690 C1130 610 1320 630 1510 700"/></g>
+<rect x="1160" y="800" width="350" height="48" rx="24" fill="#FAF7EF" opacity=".78"/><text x="1335" y="831" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#263B2F" opacity=".72">PLACEHOLDER FOTO</text>
+</svg>
