@@ -1,70 +1,40 @@
-# Website Desa Wisata Patakbanteng
+# Website Desa Wisata Patakbanteng — Revisi
 
-Website statis berdasarkan **Brief Website Desa Wisata Patakbanteng**.
+Website statis ini telah disesuaikan dengan penghapusan konten dan menu yang diminta.
 
-## Membuka website
-
-1. Ekstrak folder.
-2. Klik dua kali `index.html`, atau jalankan server lokal:
-
-```bash
-python -m http.server 8000
-```
-
-Lalu buka `http://localhost:8000`.
-
-## Data yang perlu diisi terlebih dahulu
-
-Buka `assets/js/config.js`, lalu isi:
-
-- nomor WhatsApp pusat informasi dan setiap layanan;
-- tautan Google Maps desa, basecamp, dan Rumah Bibit;
-- tautan video profil YouTube;
-- tautan media sosial resmi.
-
-Format nomor WhatsApp memakai kode negara tanpa `+`, contoh `6281234567890`.
-
-## Mengganti gambar
-
-Semua gambar sementara berbentuk SVG dan diberi tulisan **PLACEHOLDER FOTO**. Ganti file di dalam `assets/images/` menggunakan nama file yang sama agar HTML tidak perlu diubah. Gunakan WebP untuk foto final bila memungkinkan.
-
-Contoh:
-
-- `assets/images/hero/patakbanteng-hero.svg`
-- `assets/images/hero/gunung-prau-hero.svg`
-- `assets/images/hero/rumah-bibit-hero.svg`
-- `assets/images/umum/peta-transek.svg`
-- `assets/images/gunung-prau/peta-jalur.svg`
-
-Bila ekstensi diubah dari `.svg` ke `.webp`, ubah juga alamat gambar pada HTML terkait.
-
-## Struktur utama
+## Halaman yang tersedia
 
 - `index.html` — Beranda
 - `gunung-prau.html` — Informasi pendakian
 - `basecamp.html` — Basecamp Patakbanteng
-- `agrowisata.html` — Agrowisata desa
+- `agrowisata.html` — Agrowisata dan konservasi
 - `rumah-bibit.html` — Rumah Bibit
-- `jelajahi.html` — Aktivitas desa
-- `berita.html` — Artikel dan agenda
-- `layanan.html` — Layanan dan fasilitas
-- `paket.html` — Paket wisata
+- `layanan.html` — Homestay, ojek, pemandu, porter, rental, dan dokumentasi
 - `kuliner.html` — Kuliner dan UMKM
-- `perjalanan.html` — Rute dan peta
-- `tentang.html` — Profil desa
-- `kontak.html` — Helpdesk dan direktori kontak
-- `assets/css/style.css` — gaya utama
-- `assets/css/responsive.css` — aturan tablet dan ponsel
-- `assets/js/config.js` — data kontak terpusat
-- `assets/js/main.js` — navigasi, animasi, filter, galeri, dan formulir
+- `perjalanan.html` — Informasi perjalanan
+- `tentang.html` — Sejarah dan budaya
+- `berita.html` — Artikel dan berita
+- `404.html` — Halaman tidak ditemukan
 
-## Prinsip pengisian konten
+## Halaman yang dihapus
 
-- Jangan mengarang harga, jadwal, kontak, lokasi, atau SOP.
-- Hapus label placeholder hanya setelah data resmi tersedia.
-- Kompres foto dan gunakan `loading="lazy"` untuk gambar di bawah hero.
-- Uji setiap tombol WhatsApp, peta, dan tautan sebelum dipublikasikan.
+- Jelajahi
+- Paket
+- Kontak
 
-## Deploy ke Vercel
+## Pengaturan utama
 
-Folder ini sudah memiliki `vercel.json`. Unggah seluruh folder ke repository lalu import repository tersebut ke Vercel.
+Edit `assets/js/config.js` untuk menambahkan:
+
+- Tautan Google Maps desa
+- Tautan Google Maps basecamp
+- Tautan Google Maps Rumah Bibit
+- Tautan video profil YouTube
+
+## Menjalankan website
+
+Buka `index.html` secara langsung atau jalankan menggunakan Live Server di Visual Studio Code.
+
+## Catatan
+
+Seluruh navbar dan footer telah disamakan. Tidak ada lagi tautan menuju halaman Jelajahi, Paket, atau Kontak.
