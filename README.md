@@ -1,70 +1,70 @@
-# Website Desa Wisata Patakbanteng
+# Amerta Pertiwi — Patakbanteng Village Website
 
-Website statis berdasarkan **Brief Website Desa Wisata Patakbanteng**.
+**A static information website for exploring village tourism, local services and Rumah Bibit.**
 
-## Membuka website
+Built with HTML, CSS and vanilla JavaScript for a community-service project in Patakbanteng. The site organizes hiking information, agrotourism, local food, accommodation and visitor contacts without a server-side application.
 
-1. Ekstrak folder.
-2. Klik dua kali `index.html`, atau jalankan server lokal:
+[View the hosted prototype](https://amerta-pertiwi-v2.vercel.app/) · [Canonical repository decision](docs/REPOSITORY_STATUS.md) · [Verification](docs/VERIFICATION.md)
+
+**Status:** public prototype. Several images/logos and official contact fields are placeholders. A working URL is not evidence that the site is approved as an official village service. Operational information, prices and contacts need partner review.
+
+## Why this repository is the main portfolio entry
+
+Compared with [the earlier prototype](https://github.com/aata4brian/Amerta-Pertiwi), this version has 14 HTML pages, separate responsive styles, centralized contact configuration and additional destination pages. `main` is the documented baseline. `Develop` contains a later revision that must be reviewed separately before production release; it has not been merged by this portfolio update.
+
+## Run locally
 
 ```bash
-python -m http.server 8000
+python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Lalu buka `http://localhost:8000`.
+Open [localhost:8080](http://127.0.0.1:8080). No dependency install or compilation is needed.
 
-## Data yang perlu diisi terlebih dahulu
+```mermaid
+flowchart TD
+  Pages[HTML destination pages] --> Browser[Browser]
+  CSS[Shared and responsive CSS] --> Browser
+  Config[Contact and map configuration] --> JS[Vanilla JavaScript]
+  JS --> Browser
+  Browser -->|User-selected external link| Services[WhatsApp, maps and social pages]
+```
 
-Buka `assets/js/config.js`, lalu isi:
+## Implemented interactions
 
-- nomor WhatsApp pusat informasi dan setiap layanan;
-- tautan Google Maps desa, basecamp, dan Rumah Bibit;
-- tautan video profil YouTube;
-- tautan media sosial resmi.
+- Responsive navigation and dropdowns.
+- Destination filters, accordions and gallery lightbox.
+- Centralized WhatsApp, map and social-link configuration.
+- Contact form that opens WhatsApp when an official number is configured; it does not store or send email.
+- Missing-contact fallbacks and a dedicated 404 page.
 
-Format nomor WhatsApp memakai kode negara tanpa `+`, contoh `6281234567890`.
+## Content and project structure
 
-## Mengganti gambar
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Visitor entry points |
+| `gunung-prau.html`, `basecamp.html` | Hiking and basecamp information |
+| `agrowisata.html`, `rumah-bibit.html` | Agriculture and conservation |
+| `jelajahi.html`, `layanan.html`, `paket.html`, `kuliner.html` | Activities, services and local businesses |
+| `perjalanan.html`, `tentang.html`, `kontak.html`, `berita.html` | Access, village profile, directory and updates |
+| `assets/css/` | Main styles and responsive overrides |
+| `assets/js/config.js` | Official contact/map/video/social data |
+| `assets/js/main.js` | Page interactions |
+| `scripts/check_site.py` | Local paths, anchors and HTML baseline checks |
 
-Semua gambar sementara berbentuk SVG dan diberi tulisan **PLACEHOLDER FOTO**. Ganti file di dalam `assets/images/` menggunakan nama file yang sama agar HTML tidak perlu diubah. Gunakan WebP untuk foto final bila memungkinkan.
+## Verification
 
-Contoh:
+```bash
+python scripts/check_site.py
+node --check assets/js/main.js
+node --check assets/js/config.js
+```
 
-- `assets/images/hero/patakbanteng-hero.svg`
-- `assets/images/hero/gunung-prau-hero.svg`
-- `assets/images/hero/rumah-bibit-hero.svg`
-- `assets/images/umum/peta-transek.svg`
-- `assets/images/gunung-prau/peta-jalur.svg`
+The CI workflow runs these checks without secrets or deployment. It does not validate the factual accuracy of visitor information. The repository keeps its current name and Vercel connection until release changes are approved.
 
-Bila ekstensi diubah dari `.svg` ke `.webp`, ubah juga alamat gambar pada HTML terkait.
+## Contribution and next steps
 
-## Struktur utama
+Brian maintains this portfolio entry as part of Amerta Pertiwi. Source history consists primarily of bulk uploads and does not establish sole authorship of every visual or content item. Partner and teammate contributions should be credited when confirmed.
 
-- `index.html` — Beranda
-- `gunung-prau.html` — Informasi pendakian
-- `basecamp.html` — Basecamp Patakbanteng
-- `agrowisata.html` — Agrowisata desa
-- `rumah-bibit.html` — Rumah Bibit
-- `jelajahi.html` — Aktivitas desa
-- `berita.html` — Artikel dan agenda
-- `layanan.html` — Layanan dan fasilitas
-- `paket.html` — Paket wisata
-- `kuliner.html` — Kuliner dan UMKM
-- `perjalanan.html` — Rute dan peta
-- `tentang.html` — Profil desa
-- `kontak.html` — Helpdesk dan direktori kontak
-- `assets/css/style.css` — gaya utama
-- `assets/css/responsive.css` — aturan tablet dan ponsel
-- `assets/js/config.js` — data kontak terpusat
-- `assets/js/main.js` — navigasi, animasi, filter, galeri, dan formulir
+Priorities: review `Develop`; obtain official contacts and approved photos/logos; test mobile navigation and keyboard use; replace prototype information; then review deployment caching and release versioning. The repository currently sets long-lived caching on unversioned assets, which should be reviewed before a production content update.
 
-## Prinsip pengisian konten
-
-- Jangan mengarang harga, jadwal, kontak, lokasi, atau SOP.
-- Hapus label placeholder hanya setelah data resmi tersedia.
-- Kompres foto dan gunakan `loading="lazy"` untuk gambar di bawah hero.
-- Uji setiap tombol WhatsApp, peta, dan tautan sebelum dipublikasikan.
-
-## Deploy ke Vercel
-
-Folder ini sudah memiliki `vercel.json`. Unggah seluruh folder ke repository lalu import repository tersebut ke Vercel.
+No project license has been selected. Existing assets and partner marks must not be assumed freely reusable. See [asset requests](ASSET_REQUESTS.md).
